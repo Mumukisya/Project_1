@@ -3,7 +3,6 @@ package org.example.generators;
 import com.github.javafaker.Faker;
 import org.example.models.CreateOrderRequest;
 import org.example.models.IngridientsEnum;
-import org.example.models.RegisterRequest;
 
 import java.util.ArrayList;
 import java.util.Arrays;

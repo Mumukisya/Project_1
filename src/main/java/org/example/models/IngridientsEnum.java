@@ -16,7 +16,7 @@ public enum IngridientsEnum {
         BEEF_METEOR("61c0c5a71d1f82001bdaaa70", "Говяжий метеорит (отбивная)", "main"),
         TETRAODONTIMFORM_FILLET("61c0c5a71d1f82001bdaaa6e", "Филе Люминесцентного тетраодонтимформа", "main"),
         BIO_PATTIE("61c0c5a71d1f82001bdaaa71", "Биокотлета из марсианской Магнолии", "main"),
-        CRUSTY_CIRCLES("61c0c5a71d1f82001bdaaa76v", "Хрустящие минеральные кольца", "main"),
+        CRUSTY_CIRCLES("61c0c5a71d1f82001bdaaa76", "Хрустящие минеральные кольца", "main"),
         FALLENIAN_TREE_FRUITS("61c0c5a71d1f82001bdaaa77", "Плоды Фалленианского дерева", "main"),
         MARS_CRYSTALS("61c0c5a71d1f82001bdaaa78", "Кристаллы марсианских альфа-сахаридов", "main"),
         MINI_SALAD("61c0c5a71d1f82001bdaaa79", "Мини-салат Экзо-Плантаго", "main"),

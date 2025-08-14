@@ -3,7 +3,6 @@ package org.example.clients;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 import org.example.models.*;
 
 import static io.restassured.RestAssured.given;
@@ -19,7 +18,6 @@ public class ApiClient {
     private String token;
     private String login;
     private String password;
-    private String name;
 
     public ApiClient() {
         RestAssured.baseURI = "https://stellarburgers.nomoreparties.site";
@@ -35,7 +33,6 @@ public class ApiClient {
             token = response.as(RegisterResponse.class).getAccessToken();
             login = registerRequest.getEmail();
             password = registerRequest.getPassword();
-            name = registerRequest.getName();
         } else {
             token = null;
         }
@@ -81,10 +78,29 @@ public class ApiClient {
                 .patch(API_USER);
         return response;
     }
+
+    @Step("Изменение пользователя")
+    public Response editUserWithoutToken(EditUserRequest editUserRequest) {
+        Response response = given()
+                .header("Content-type", "application/json")
+                .body(editUserRequest)
+                .patch(API_USER);
+        return response;
+    }
+
     @Step("Создание заказа")
     public Response createOrder(CreateOrderRequest createOrderRequest) {
         Response response = given()
                 .header("Authorization", token)
+                .header("Content-type", "application/json")
+                .body(createOrderRequest)
+                .post(API_ORDERS);
+        return response;
+    }
+
+    @Step("Создание заказа без авторизации")
+    public Response createOrderWithoutToken(CreateOrderRequest createOrderRequest) {
+        Response response = given()
                 .header("Content-type", "application/json")
                 .body(createOrderRequest)
                 .post(API_ORDERS);
