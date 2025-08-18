@@ -22,6 +22,7 @@ public class ApiTests {
 
 
     private ApiClient apiClient = new ApiClient();
+    private Faker faker = new Faker();
 
     @ParameterizedTest(name = "Регистрация пользователя с {2} и ожидаемым ответом: {1}")
     @MethodSource("registerData")
@@ -35,7 +36,6 @@ public class ApiTests {
     @Test
     @DisplayName("Проверка тела ответа при успешной регистрации")
     public void verifyRegisterResponseBodyStructure() {
-        Faker faker = new Faker();
         // 1. Подготовка тестовых данных
         RegisterRequest registerRequest = new RegisterRequest(
                 faker.internet().safeEmailAddress(),
@@ -257,7 +257,6 @@ public class ApiTests {
     @MethodSource("orderData")
     @DisplayName("Тестирование создания заказа")
     public void checkCreateOrderWithSuccess(CreateOrderRequest createOrderRequest, int statusCode, String forTestName) {
-
         apiClient.register(randomUser());
         apiClient.auth();
 
