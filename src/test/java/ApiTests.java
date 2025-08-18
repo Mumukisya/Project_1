@@ -33,7 +33,7 @@ public class ApiTests {
     }
 
     @Test
-    @DisplayName("Проверка тела ответа при успешной регистрации")
+    @DisplayName("Проверка тела ответа при успешной регистрации1")
     public void verifyRegisterResponseBodyStructure() {
         Faker faker = new Faker();
         // 1. Подготовка тестовых данных
